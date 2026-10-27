@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api/v1', timeout: 90000, withCredentials: true });
-export const apiReady = () => Boolean(import.meta.env.VITE_API_BASE_URL);
+const api = axios.create({ baseURL: import.meta.env.VITE_API_BASE_URL || '/api/v1', timeout: 90000, withCredentials: true });
+export const apiReady = () => import.meta.env.VITE_DEMO_MODE !== 'true';
 export async function generateMystery(payload) {
   const { data } = await api.post('/mysteries', payload);
   return data.data;

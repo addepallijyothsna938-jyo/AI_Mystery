@@ -6,7 +6,7 @@ try {
   const config = readEnvironment();
   await connectDatabase(config.mongoUri);
   const app = createApp(config);
-  app.listen(config.port, () => console.log(`AI Mystery API listening on http://localhost:${config.port}`));
+  app.listen(config.port, '0.0.0.0', () => console.log(`AI Mystery listening on port ${config.port}`));
 } catch (error) {
   console.error(`Unable to start AI Mystery: ${error.message}`);
   process.exit(1);
