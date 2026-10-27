@@ -31,7 +31,7 @@ Create an API key in [Google AI Studio](https://aistudio.google.com/app/apikey).
 3. Apply the Blueprint. The service uses these commands:
 
    ```text
-   Build:  npm install && npm install --prefix client && npm install --prefix server && npm run build --prefix client
+   Build:  npm install && npm install --prefix client --include=dev && npm install --prefix server && npm run build --prefix client
    Start:  npm start
    ```
 
